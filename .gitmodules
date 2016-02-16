@@ -1,3 +1,9 @@
 [submodule "3rd/jemalloc"]
 	path = 3rd/jemalloc
 	url = https://github.com/jemalloc/jemalloc.git
+[submodule "doc/skynet-wiki"]
+	path = doc/skynet-wiki
+	url = https://github.com/cloudwu/skynet.wiki.git
+[submodule "mingw"]
+	path = mingw
+	url = https://github.com/zgpxgame/skynet-mingw.git
