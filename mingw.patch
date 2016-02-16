@@ -1,0 +1,39 @@
+mingw-original/autotest 和 mingw/autotest 有共同的子目录
+diff -u mingw-original/Makefile mingw/Makefile
+--- mingw-original/Makefile	2016-02-16 11:43:37.126353000 +0800
++++ mingw/Makefile	2016-02-16 11:48:20.995015000 +0800
+@@ -18,7 +18,7 @@
+ # CFLAGS += -DUSE_PTHREAD_LOCK
+ 
+ # link
+-LDFLAGS := -llua53 -lplatform -lpthread -lws2_32 -L$(SKYNET_BUILD_PATH)
++LDFLAGS := -llua53 -lplatform -lpthread -lws2_32 -ldl -lpsapi -L$(SKYNET_BUILD_PATH)
+ SHARED := --shared
+ EXPORT := -Wl,-E
+ SHAREDLDFLAGS := -llua53 -lskynet -lplatform -lws2_32 -L$(SKYNET_BUILD_PATH)
+mingw-original/platform 和 mingw/platform 有共同的子目录
+diff -u mingw-original/prepare.sh mingw/prepare.sh
+--- mingw-original/prepare.sh	2016-02-16 11:43:37.136353100 +0800
++++ mingw/prepare.sh	2016-02-16 11:48:33.458727900 +0800
+@@ -1,10 +1,10 @@
+ #!/bin/sh
+ 
+-ln -s -f skynet/3rd/ 3rd
+-ln -s skynet/examples/ examples 
+-ln -s skynet/lualib/ lualib  
+-ln -s skynet/lualib-src/ lualib-src  
+-ln -s skynet/service/ service 
+-ln -s skynet/service-src/ service-src  
+-ln -s skynet/skynet-src/ skynet-src 
+-ln -s skynet/test/ test
+\ 文件尾没有 newline 字符
++ln -s -f ../3rd/ 3rd
++ln -s ../examples/ examples 
++ln -s ../lualib/ lualib  
++ln -s ../lualib-src/ lualib-src  
++ln -s ../service/ service 
++ln -s ../service-src/ service-src  
++ln -s ../skynet-src/ skynet-src 
++ln -s ../test/ test
+\ 文件尾没有 newline 字符
+mingw-original/skynet 和 mingw/skynet 有共同的子目录
